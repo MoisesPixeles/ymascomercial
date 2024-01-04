@@ -1,0 +1,488 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dark Mode</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/Y_mas_comercial.css" rel="stylesheet">
+<link href="css/Bishamon.css" rel="stylesheet">
+<script src="jquery-1.12.4.min.js"></script>
+<script src="jquery.ui.effect.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="skrollr.min.js"></script>
+<script>   
+   document.addEventListener('DOMContentLoaded', function(event)
+   {
+      var navigationMenu_dropdownToggle = document.querySelectorAll('#navigationMenu .dropdown-toggle');
+      navigationMenu_dropdownToggle.forEach(item => 
+      {
+         var dropdown = new bootstrap.Dropdown(item, {popperConfig:{placement:item.getAttribute('data-bs-placement')}});
+      });
+      var navigationMenu_dropdown = document.querySelectorAll('#navigationMenu .dropdown');
+      navigationMenu_dropdown.forEach(item => 
+      {
+         item.addEventListener('shown.bs.dropdown', function(e)
+         {
+            e.currentTarget.classList.add('show');
+         });
+         item.addEventListener('hidden.bs.dropdown', function(e)
+         {
+            e.currentTarget.classList.remove('show');
+         });
+      });
+   });
+</script>
+<script>   
+   $(document).ready(function()
+   {
+      $("a[href*='#header']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeInSine');
+      });
+      $("a[href*='#welcome']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_welcome').offset().top-78 }, 600, 'easeOutQuart');
+      });
+      $("a[href*='#news']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_news').offset().top-78 }, 600, 'easeOutQuart');
+      });
+      $("a[href*='#about']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_about').offset().top-78 }, 600, 'easeOutQuart');
+      });
+      $("a[href*='#team']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_team').offset().top-78 }, 600, 'easeOutQuart');
+      });
+      function skrollrInit()
+      {
+         skrollr.init({forceHeight: false, mobileCheck: function() { return false; }, smoothScrolling: false});
+      }
+      skrollrInit();
+      $("a[href*='#contact']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_contact').offset().top }, 600, 'linear');
+      });
+   });
+</script>
+</head>
+<body>
+   <div id="wb_header">
+      <div id="header">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_headerIcon1" style="display:inline-block;width:24px;height:33px;text-align:center;z-index:0;">
+                  <a href="tel:5536701704"><div id="headerIcon1"><i class="fa fa-phone"></i></div></a>
+               </div>
+               <label for="" id="headerLabel1" style="display:inline-block;width:169px;line-height:17px;z-index:1;">Móvil: +52 5536701704</label>
+            </div>
+            <div class="col-2">
+               <div id="wb_headerIcon2" style="display:inline-block;width:24px;height:33px;text-align:center;z-index:2;">
+                  <a href="mailto:ventas@ymascomercial.mx"><div id="headerIcon2"><i class="fa fa-envelope-o"></i></div></a>
+               </div>
+               <label for="" id="headerLabel2" style="display:inline-block;width:250px;line-height:17px;z-index:3;">Email: ventas@ymascomercial.mx</label>
+            </div>
+            <div class="col-3">
+            </div>
+            <div class="col-4">
+               <div id="wb_headerIcon3" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:4;">
+                  <a href="https://www.facebook.com/ymascomercial" target="_blank"><div id="headerIcon3"><i class="fa fa-facebook-square"></i></div></a>
+               </div>
+               <div id="wb_headerIcon4" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:5;">
+                  <a href="https://www.instagram.com/y_mas_comercial/" target="_blank"><div id="headerIcon4"><i class="fa fa-instagram"></i></div></a>
+               </div>
+               <div id="wb_headerIcon5" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:6;">
+                  <a href="https://www.youtube.com/@ymascomercial" target="_blank"><div id="headerIcon5"><i class="fa fa-youtube"></i></div></a>
+               </div>
+               <div id="wb_headerIcon6" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:7;">
+                  <a href="https://www.linkedin.com/company/y-más-comercial" target="_blank"><div id="headerIcon6"><i class="fa fa-linkedin-square"></i></div></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_navigation">
+      <div id="navigation">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_Image1" style="display:block;width:100%;height:auto;z-index:8;">
+                  <img src="images/Logo198x100_4.png" id="Image1" alt="" width="212" height="107">
+               </div>
+            </div>
+            <div class="col-2">
+               <nav id="wb_navigationMenu" style="display:block;width:100%;z-index:9;">
+                  <div id="navigationMenu" class="navigationMenu" style="width:100%;height:auto !important;">
+                     <div class="container">
+                        <div class="navbar-header">
+                           <button title="" type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navigationMenu-navbar-collapse">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                           </button>
+                        </div>
+                        <div class="navigationMenu-navbar-collapse collapse">
+                           <ul class="nav navbar-nav">
+                              <li class="nav-item">
+                                 <a href="./index.html" class="nav-link">Inicio</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                 <a href="#" class="dropdown-toggle" data-bs-placement="bottom-start" data-bs-toggle="dropdown">Marcas<b class="caret"></b></a>
+                                 <ul class="dropdown-menu">
+                                    <li class="nav-item dropdown-item">
+                                       <a href="./UNIC.html" class="nav-link">UNIC</a>
+                                    </li>
+                                    <li class="nav-item dropdown-item">
+                                       <a href="./Bishamon.html" class="nav-link">BISHAMON</a>
+                                    </li>
+                                    <li class="nav-item dropdown-item">
+                                       <a href="./Mekatech.html" class="nav-link">MEKATECH</a>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="#contact" class="nav-link">Contacto</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_welcome">
+      <div id="welcome-overlay"></div>
+      <div id="welcome">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_welcomeHeading" style="display:block;width:100%;z-index:10;">
+                  <h1 id="welcomeHeading">Y Más Comercial</h1>
+               </div>
+               <div id="wb_welcomeJavaScript" style="display:block;width:100%;z-index:11;">
+                  <div style="color:#FFFFFF;font-size:16px;font-family:Roboto;font-weight:500;font-weight:normal;font-style:normal;text-align:center;text-decoration:none" id="typewriter-deluxe">
+                     <span id="typewriter-text" style="border-right:0.08em solid #FFFFFF;"></span>
+                  </div>
+                  <script>                  
+                  var data = "Venta de Equipos de^Carga, Maniobra y Agrícola^https://www.ymascomercial.mx";
+                  var lines = data.split('^');
+                  var reverse = false;
+                  var index = 0;
+                  var text = '';
+                  var typeWriterElement = document.getElementById("typewriter-text");
+                  function typeWriterDeluxe() 
+                  {
+                     var i = index % lines.length;
+                     var line = lines[i];
+                     if (reverse) 
+                     {
+                        text = line.substring(0, text.length - 1);
+                     } 
+                     else 
+                     {
+                        text = line.substring(0, text.length + 1);
+                     }
+                     typeWriterElement.innerHTML = text;
+                     var timeout = 200 - Math.random() * (200/2);
+                     if (reverse) 
+                     { 
+                        timeout /= 2; 
+                     }
+                     if (!reverse && text === line) 
+                     {
+                        timeout = 1000;
+                        reverse = true;
+                     } 
+                     else 
+                     if (reverse && text === '') 
+                     {
+                        reverse = false;
+                        index++;
+                        timeout = 500;
+                     }
+                     setTimeout(typeWriterDeluxe, timeout);
+                  }
+                  typeWriterDeluxe();
+                  </script>
+               </div>
+               <a id="welcomeButton" href="#contact" style="display:inline-block;width:141px;height:37px;z-index:12;">CONTACTO</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_news">
+      <div id="news">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_newsHeading" style="display:block;width:100%;z-index:13;">
+                  <h2 id="newsHeading">PROVEEDOR DE EQUIPOS DE MANEJO DE<br>MATERIALES EN ONTARIO, CALIFORNIA.</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_about">
+      <div id="about">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_aboutText1">
+                  <p style="font-family:Arial;font-size:16px;line-height:18px;"><span style="font-family:Roboto;font-weight:900;">SOBRE BISHAMON.</span></p>
+                  <p style="font-family:Arial;">&nbsp;</p>
+                  <p style="font-family:Roboto;font-weight:500;color:#000000;">NUESTRA DECLARACIÓN DE MISIÓN Bishamon Industries Corporation se compromete a proporcionar productos ergonómicos innovadores y de calidad para mejorar la seguridad y la productividad de los trabajadores. Nuestro objetivo es superar las expectativas de nuestros clientes en calidad, entrega y valor a través de la mejora continua y la interacción con el cliente.</p>
+                  <p style="font-family:Roboto;font-weight:500;"><span style="font-family:Roboto;font-weight:900;font-size:16px;line-height:19px;">NUESTRA FILOSOFIA.</span></p>
+                  <p style="font-family:Roboto;font-weight:500;color:#000000;">"En Bishamon, estamos comprometidos a ser una empresa impulsada por clientes que valora y atiende a desarrollar una sólida asociación con nuestros clientes. "Trabajar más duro para facilitar su trabajo" es una filosofía que mantenemos porque creemos completamente que el éxito de nuestros clientes es nuestro éxito ".</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_team">
+      <div id="team">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_teamHeading1" style="display:block;width:100%;z-index:15;">
+                  <h2 id="teamHeading1">NUESTROS PRODUCTOS.</h2>
+               </div>
+               <div id="wb_teamHeading2" style="display:block;width:100%;z-index:16;">
+                  <h3 id="teamHeading2"></h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="StickyLayer" style="position:fixed;text-align:left;left:auto;right:25px;top:auto;bottom:25px;width:50px;height:50px;z-index:70;z-index:99999;" data-250-start="opacity:1;" data-start="opacity:0;">
+      <div id="wb_up-arrow" style="position:absolute;left:9px;top:8px;width:24px;height:24px;text-align:center;z-index:17;">
+         <a href="#welcome"><div id="up-arrow"><i class="fa fa-angle-up"></i></div></a></div>
+   </div>
+   <div id="wb_LayoutGrid5">
+      <div id="LayoutGrid5">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_Image2" style="display:block;width:100%;height:auto;z-index:18;">
+                     <img src="images/Lift-Table-EZUP-EZU-web.png" id="Image2" alt="" title="600x400" width="455" height="238">
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_Heading2" style="display:block;width:100%;z-index:19;">
+                     <h1 id="Heading2">MESAS ELEVADORAS DE TIJERA NEUMÁTICAS</h1>
+                  </div>
+                  <div id="wb_Heading3" style="display:block;width:100%;z-index:20;">
+                     <h2 id="Heading3">EZ UP® EZU Series EZU-15, EZU-15-R, EZU-15-R-SS</h2>
+                  </div>
+                  <div id="wb_Text9">
+                     <span style="color:#FFFFFF;">Mesa elevadora neumática con una capacidad de elevación de hasta 1.700 lbs. Con un diseño aerodinámico, diseñada para proporcionar equipos de elevación motorizados en áreas que no cuenten con una fuente de energía. Reduce el riesgo de sufrir lesiones, facilita la labor de los trabajadores.</span>
+                  </div>
+                  <div id="wb_Shape1" style="display:inline-block;width:102px;height:44px;z-index:22;position:relative;">
+                     <a href="mailto:ventas@ymascomercial.mx"><img src="images/img0009.png" id="Shape1" alt="" width="102" height="44" style="width:102px;height:44px;"></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_LayoutGrid3">
+      <div id="LayoutGrid3">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_Image3" style="display:block;width:100%;height:auto;z-index:23;">
+                     <img src="images/Mobile-Handling-MobiLeveler-ESX-Main-web.png" id="Image3" alt="" title="600x400" width="455" height="238">
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_Heading1" style="display:block;width:100%;z-index:24;">
+                     <h1 id="Heading1">MOBILEVELER.</h1>
+                  </div>
+                  <div id="wb_Heading4" style="display:block;width:100%;z-index:25;">
+                     <h2 id="Heading4">ESX SERIES</h2>
+                  </div>
+                  <div id="wb_Text10">
+                     <span style="color:#FFFFFF;">Cuenta con dos modelos uno de resorte simple y otro de resorte doble, ambos modelos cuentan con una perilla que selecciona el peso calibrado dando así un fácil acceso para ajustar la resistencia del resorte. Su capacidad de carga se puede ajustar fácilmente puede cargar hasta 880 lbs.<br>Puede bajar progresivamente cuando sea cargado y reduciendo así la necesidad de doblar, levantar y estirar, su estructura robusta puede soportar hasta el uso más pesado en entornos industriales.</span>
+                  </div>
+                  <div id="wb_Shape2" style="display:inline-block;width:102px;height:44px;z-index:27;position:relative;">
+                     <a href="mailto:ventas@ymascomercial.mx"><img src="images/img0010.png" id="Shape2" alt="" width="102" height="44" style="width:102px;height:44px;"></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_LayoutGrid7">
+      <div id="LayoutGrid7">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_Image5" style="display:block;width:100%;height:auto;z-index:28;">
+                     <img src="images/Pallet-Trucks-Blue-Label-BS-web.png" id="Image5" alt="" title="600x400" width="455" height="238">
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_Heading7" style="display:block;width:100%;z-index:29;">
+                     <h1 id="Heading7">BLUE LABEL</h1>
+                  </div>
+                  <div id="wb_Heading8" style="display:block;width:100%;z-index:30;">
+                     <h2 id="Heading8">BS SERIE</h2>
+                  </div>
+                  <div id="wb_Text12">
+                     <span style="color:#FFFFFF;">De uso fácil y una vida de larga duración, su capacidad puede variar dependiendo de las configuraciones de las horquillas puede ser de 2500, 5500 y 6500 lb.<br>Cuenta con una palanca manual ergonómica con 3 posiciones para elevar, descenso y un punto muerto, su manivela puede girar hasta 210 grados.<br>Las transpaletas están disponibles en 3 capacidades, 2 anchuras de horquilla, 4 longitudes de horquilla y 2 alturas de horquilla.</span>
+                  </div>
+                  <div id="wb_Shape4" style="display:inline-block;width:102px;height:44px;z-index:32;position:relative;">
+                     <a href="mailto:ventas@ymascomercial.mx"><img src="images/img0011.png" id="Shape4" alt="" width="102" height="44" style="width:102px;height:44px;"></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_LayoutGrid6">
+      <div id="LayoutGrid6">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_Image4" style="display:block;width:100%;height:auto;z-index:33;">
+                     <img src="images/Mobile-Lift-Tables-BX-BXB-web.png" id="Image4" alt="" title="600x400" width="455" height="238">
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_Heading5" style="display:block;width:100%;z-index:34;">
+                     <h1 id="Heading5">MANEJO MÓVIL</h1>
+                  </div>
+                  <div id="wb_Heading6" style="display:block;width:100%;z-index:35;">
+                     <h2 id="Heading6">MOVILIFT SERIES BX, BXB, BXS</h2>
+                  </div>
+                  <div id="wb_Text11">
+                     <span style="color:#FFFFFF;">Cuenta con dos modelos, un de doble tijera y otro de acero inoxidable, su capacidad de carga va desde 330 a 1760 lbs.<br><br>Está disponible en una variedad de capacidades y alturas elevadas, puede satisfacer una gran gama de aplicaciones; están hechos de materiales de alta resistencia y calidad e incluyen rodillos de tijera para una máxima estabilidad.</span>
+                  </div>
+                  <div id="wb_Shape3" style="display:inline-block;width:102px;height:44px;z-index:37;position:relative;">
+                     <a href="mailto:ventas@ymascomercial.mx"><img src="images/img0012.png" id="Shape3" alt="" width="102" height="44" style="width:102px;height:44px;"></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_LayoutGrid8">
+      <div id="LayoutGrid8">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_Image6" style="display:block;width:100%;height:auto;z-index:38;">
+                     <img src="images/Bishamon-unilift-web.png" id="Image6" alt="" title="600x400" width="455" height="238">
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_Heading9" style="display:block;width:100%;z-index:39;">
+                     <h1 id="Heading9">POSICIONES DE PALET</h1>
+                  </div>
+                  <div id="wb_Heading10" style="display:block;width:100%;z-index:40;">
+                     <h2 id="Heading10">UNILIFT SERIES</h2>
+                  </div>
+                  <div id="wb_Text13">
+                     <span style="color:#FFFFFF;">Puede levantar y transportar cargas de hasta 2000 lbs. Y alcanzar una altura de hasta 36 pulgadas (sin carga).<br>Funciona con un sistema de batería de 24 V CC y un cargador de batería automático a bordo.<br>Su consola de operador contiene botones para subir y bajar las horquillas e indicaciones LED donde se muestra el estado en el que se encuentra la batería.</span>
+                  </div>
+                  <div id="wb_Shape5" style="display:inline-block;width:102px;height:44px;z-index:42;position:relative;">
+                     <a href="mailto:ventas@ymascomercial.mx"><img src="images/img0013.png" id="Shape5" alt="" width="102" height="44" style="width:102px;height:44px;"></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_contact">
+      <div id="contact">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_Text8">
+                  <span style="color:#FFFFFF;font-family:'Roboto';font-weight:900;font-size:24px;"><strong>CONTACTANOS</strong></span><span style="color:#FFFFFF;font-family:Arial;font-size:24px;"><strong><br></strong></span><span style="color:#FFFFFF;font-family:'Roboto';font-weight:500;font-size:17px;"><em>Nuestra experiencia es tu garantía de éxito en Y Más Comercial. <br>No solo construimos proyectos; construimos relaciones sólidas y duraderas. <br>¿Cómo podemos ayudarte hoy?</em></span>
+               </div>
+               <div id="wb_LayoutGrid4">
+                  <div id="LayoutGrid4">
+                     <div class="row">
+                        <div class="col-1">
+                           <input type="text" id="Editbox1" style="display:block;width:100%;height:38px;z-index:43;" name="name" value="" spellcheck="false" placeholder="Tu Nombre">
+                           <input type="text" id="Editbox2" style="display:block;width:100%;height:38px;z-index:44;" name="email" value="" spellcheck="false" placeholder="Tu Correo">
+                           <input type="text" id="Editbox3" style="display:block;width:100%;height:38px;z-index:45;" name="phone" value="" spellcheck="false" placeholder="Tu Teléfono">
+                        </div>
+                        <div class="col-2">
+                           <textarea name="TextArea1" id="TextArea1" style="display:block;width:100%;;height:136px;z-index:46;" rows="7" cols="51" autocomplete="off" spellcheck="false" placeholder="Tus Comentarios"></textarea>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <input type="submit" id="Button1" name="" value="ENVIAR MENSAJE" style="display:block;width:100%;;height:34px;z-index:49;">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_LayoutGrid1">
+      <div id="LayoutGrid1">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_Text5">
+                  <span style="color:#FF0000;font-family:'Roboto';font-weight:900;font-size:16px;"><strong>COMPROMISO</strong></span>
+               </div>
+               <div id="wb_Text6">
+                  <span style="color:#000000;font-family:'Roboto';font-weight:500;font-size:11px;"><strong>Nuestros clientes y proveedores son lo primero dar siempre una solución, brindar un servicio de calidad, nos regimos bajo el lema ganar-ganar</strong></span>
+               </div>
+            </div>
+            <div class="col-2">
+               <div id="wb_Text4">
+                  <span style="color:#FF0000;font-family:'Roboto';font-weight:900;font-size:16px;"><strong>REDES SOCIALES</strong></span>
+               </div>
+               <div id="wb_FontAwesomeIcon1" style="display:inline-block;width:16px;height:16px;text-align:center;z-index:53;">
+                  <a href="https://www.facebook.com/ymascomercial" target="_blank"><div id="FontAwesomeIcon1"><i class="fa fa-facebook"></i></div></a>
+               </div>
+               <div id="wb_FontAwesomeIcon2" style="display:inline-block;width:16px;height:16px;text-align:center;z-index:54;">
+                  <a href="https://www.linkedin.com/company/y-más-comercial" target="_blank"><div id="FontAwesomeIcon2"><i class="fa fa-linkedin-square"></i></div></a>
+               </div>
+               <div id="wb_FontAwesomeIcon4" style="display:inline-block;width:16px;height:16px;text-align:center;z-index:55;">
+                  <a href="https://www.instagram.com/y_mas_comercial/" target="_blank"><div id="FontAwesomeIcon4"><i class="fa fa-instagram"></i></div></a>
+               </div>
+               <div id="wb_FontAwesomeIcon5" style="display:inline-block;width:16px;height:16px;text-align:center;z-index:56;">
+                  <a href="mailto:https://www.youtube.com/@ymascomercial"><div id="FontAwesomeIcon5"><i class="fa fa-youtube"></i></div></a>
+               </div>
+            </div>
+            <div class="col-3">
+               <div id="wb_Text2">
+                  <span style="color:#FF0000;font-family:'Roboto';font-weight:900;font-size:16px;"><strong>CONTACTO</strong></span>
+               </div>
+               <div id="wb_Text3">
+                  <span style="color:#000000;font-family:'Roboto';font-weight:500;font-size:11px;"><strong>Calle Lluvia 28, #36, El Manantial<br>C.P. 96022 ,Corregidora, Querétaro<br>CDMX (55)3670-1704 / Qro (44)2270-7814<br>ventas@ymascomercial.mx</strong></span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_LayoutGrid2">
+      <div id="LayoutGrid2">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_Text7">
+                  <span style="color:#FFFFFF;font-family:Arial;font-size:13px;">DERECHOS RESERVADOS © Y MÁS COMERCIAL 2024</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
